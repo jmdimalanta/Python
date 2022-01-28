@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <main>
+        <div id="form-container">
+            <form action="/create/survey" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="location">Select a location:</label>
+                    <select class="form-control" name="location">
+                        <option value="San Jose">San Jose</option>
+                        <option value="Seattle">Seattle</option>
+                        <option value="Online">Online</option>
+                    </select>
+                </div>
+                <div class="form-check">
+                    <h5>Choose your favorite language:</h5>
+                    <label class="form-check-label">
+                    <input type="checkbox" name="language" id="something">JavaScript
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" name="language" id="something">Python
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" name="language" id="something">Java
+                    </label>
+                    <label class="form-check-label">
+                        <input type="checkbox" name="language" id="something">C++
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea class="form-control" name="comment" cols="15" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    </main>
+</body>
+</html>

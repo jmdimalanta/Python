@@ -1,0 +1,69 @@
+1. Create 3 new dojos.
+INSERT INTO dojos (name, created_at, updated_at)
+VALUES ('Miyagi-do Karate', '2020-03-20', '2020-12-10');
+
+INSERT INTO dojos (name, created_at, updated_at)
+VALUES ('Cobra Kai', '2018-06-20', '2020-12-10');
+
+INSERT INTO dojos (name, created_at, updated_at)
+VALUES ('Lin Kuei', '1400-03-20', '2020-12-10');
+
+2. Delete the 3 dojos you just created.
+DELETE FROM `dojos_and_ninjas_schema`.`dojos` 
+
+3. Create 3 more dojos.
+INSERT INTO dojos (name, created_at, updated_at)
+VALUES ('Miyagi-do Karate', '2020-03-20', '2020-12-10');
+
+INSERT INTO dojos (name, created_at, updated_at)
+VALUES ('Cobra Kai', '2018-06-20', '2020-12-10');
+
+INSERT INTO dojos (name, created_at, updated_at)
+VALUES ('Lin Kuei', '1400-03-20', '2020-12-10');
+
+4. Create 3 ninjas that belong to the first dojo.
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('Daniel', 'Larusso', 50, '1984-06-01', '2021-08-23', 4);
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('Sam', 'Larusso', 14, '2018-06-01', '2021-08-23', 4);
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('Robby', 'Keene', 15, '2020-12-01', '2021-08-23', 4);
+
+5. Create 3 ninjas that belong to the second dojo.
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('John', 'Kreese', 65, '2001-12-01', '2021-08-23', 5);
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('Terry', 'Silver', 48, '2001-12-01', '2021-08-23', 5);
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('Tory', 'Nichols', 16, '2020-12-15', '2021-08-23', 5);
+
+6. Create 3 ninjas that belong to the third dojo.
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('Bi', 'Han', 48, '2021-01-15', '2021-08-23', 6);
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('Tomas', 'Brvada', 30, '2016-01-15', '2021-08-23', 6);
+
+insert into ninjas (first_name, last_name, age, created_at, updated_at, dojo_id)
+values ('Frost', 'Han', 25, '2015-01-15', '2021-08-23', 6);
+
+7. Retrieve all the ninjas from the first dojo.
+select * from dojos
+left join ninjas on dojos.id = ninjas.dojo_id
+where dojos.id = 4;
+
+8. Retrieve all the ninjas from the second dojo.
+select * from dojos
+left join ninjas on dojos.id = ninjas.dojo_id
+where dojos.id = (select id from dojos order by id desc limit 1);
+
+9. Retrieve the last ninja's dojo.
+select * from dojos
+where dojos.id = (select id from ninjas order by dojo_id desc limit 1);
+
+
+

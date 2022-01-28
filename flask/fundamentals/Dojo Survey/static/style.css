@@ -1,0 +1,25 @@
+*{
+    width: 0px auto;
+    height: 0px auto;
+}
+
+#form-container{
+    width: 0px auto;
+    height: 0px auto;
+    margin: 15px;
+    background-color:rgb(153, 195, 229);
+    border-radius: 10px;
+}
+
+.form-group{
+    margin: 10px;
+}
+
+.form-check-label{
+    margin: 5px;;
+}
+
+button{
+    margin-left: 10px;
+    margin-bottom: 5px;
+}

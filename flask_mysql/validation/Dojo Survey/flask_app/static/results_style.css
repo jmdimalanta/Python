@@ -1,0 +1,19 @@
+*{
+    width: 0px auto;
+    height: 0px auto;
+}
+
+#results-container{
+    width: 0px auto;
+    height: 0px auto;
+    margin: 15px;
+    background-color: steelblue;
+}
+
+h2{
+    margin-top: 10px;
+}
+
+form{
+    margin: 15px;
+}

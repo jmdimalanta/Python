@@ -1,0 +1,13 @@
+Commands used:
+1. SELECT *
+   FROM users;
+
+2. insert into users (first_name, last_name)
+values ('Lebron', 'James');
+
+3. update twitter.users
+set handle = "KingJames" ,birthday = "1984-12-30"
+where id = 6
+
+4.  delete from twitter.users
+where id = 7

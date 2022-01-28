@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "Dojo Survey"
+		},
+		{
+			"path": "Email Validation"
+		},
+		{
+			"path": "Practice"
+		},
+		{
+			"path": "Login and Reg"
+		},
+		{
+			"path": "..\\belt_review\\Recipes"
+		},
+		{
+			"path": "..\\belt_review\\Belt Exam"
+		},
+		{
+			"path": "..\\belt_review\\Belt Exam 2"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Recipes"
+	}
+}

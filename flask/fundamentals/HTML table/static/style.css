@@ -1,0 +1,17 @@
+*{
+    width: 0px auto;
+    height: 0px auto;
+}
+
+body{
+    align-items: center;
+}    
+
+table{
+    text-align: center;
+    color: black;
+}
+
+th{
+    background-color: burlywood;
+}

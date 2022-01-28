@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Add a Thought</title>
+</head>
+<body>
+    <h1>Welcome {{user.first_name}} {{user.last_name}}</h1>
+    <a href="/welcome">Home</a>
+    <a href="/logout">Logout</a>
+
+    <div class="container">
+        <h2>Add a new thought!</h2>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/users/{{user.id}}/thought" method="POST">
+            </div>
+            <div class="form-group">
+                <label for="content">Add a thought</label>
+                <textarea name="content" name="content" class= "form-control "cols="30" rows="10" placeholder="Enter thought Here!"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Thought!</button>
+        </form>
+    </div>
+</body>
+</html>

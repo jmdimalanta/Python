@@ -1,0 +1,26 @@
+*{
+    width: 0px auto;
+    height: 0px auto;
+}
+
+h1{
+    background-color: burlywood;
+    color: crimson;
+    text-align: center;
+}
+
+td{
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    margin-top: -2px;
+    border: solid 3px black;
+}
+
+.color0{
+    background-color: crimson;
+}
+
+.color1{
+    background-color: darkblue;
+}

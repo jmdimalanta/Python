@@ -1,0 +1,68 @@
+1. Create 5 different authors: Jane Austen, Emily Dickinson, Fyodor Dostoevsky, William Shakespeare, Lau Tzu
+
+INSERT INTO authors (first_name, last_name, created_at, updated_at)
+VALUES ("Jane", "Austen", NOW(), NOW()), ("Emily", "Dickinson", NOW(), NOW()), ("Fyodor", "Dostoevsky", NOW(), NOW()), ("William", "Shakespeare", NOW(), NOW()), ("Lau", "Tzu", NOW(), NOW());
+
+2. Create 5 books with the following names: C Sharp, Java, Python, PHP, Ruby.
+
+INSERT INTO books (title, num_of_pages, created_at, updated_at)
+VALUES ("C Sharp", 200, NOW(), NOW()), ("Java", 300, NOW(), NOW()), ("Python", 280, NOW(), NOW()), ("PHP", 150, NOW(), NOW()), ("Ruby", 200, NOW(), NOW());
+
+3. Change the name of C Sharp book to C#
+
+UPDATE books SET title = "C#"
+WHERE id = 1;
+
+4. Change the first name of the 4th author to Bill
+
+UPDATE authors SET first_name = "Bill"
+WHERE id = 4;
+
+5. Have the first author favorite the first 2 books
+
+INSERT INTO favorites (author_id, book_id)
+VALUES (1,1),(1,2)
+
+6. Have the second author favorite the first 3 books
+
+INSERT INTO favorites (author_id, book_id)
+VALUES (2, 1), (2, 2), (2, 3);
+
+7. Have the third author favorite the first 4 books
+
+INSERT INTO favorites (author_id, book_id)
+VALUES (3, 1), (3, 2), (3, 3), (3, 4);
+
+8. Retrieve all the authors who favorited the 3rd book
+
+SELECT * FROM authors
+JOIN favorites ON author_id = favorites.author_id
+WHERE book_id = 3;
+
+9. Remove the first author of the 3rd book's favorites
+DELETE FROM authors WHERE id = 5
+DELETE FROM favorites 
+WHERE id = 5;
+
+10. Add the 5th author as another who favorited the 2nd book
+INSERT INTO favorites (author_id, book_id)
+VALUES (6, 2);
+
+11. Find all the books that the 3rd author favorited.
+
+SELECT first_name, title
+FROM authors
+LEFT JOIN favorites ON author_id = favorites.author_id
+LEFT JOIN books
+ON favorites.book_id = book_id
+WHERE first_name = "Fyodor";
+
+12. Query: Find all the authors that favorited the 5th book.
+
+SELECT first_name, title
+FROM authors
+LEFT JOIN favorites ON author_id = favorites.author_id
+LEFT JOIN books
+ON favorites.book_id = book_id
+WHERE title = "Ruby"; 
+ 
